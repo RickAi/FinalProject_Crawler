@@ -18,7 +18,7 @@ NEWSPIDER_MODULE = 'FinalProject.spiders'
 DBKWARGS = {'db': 'final_project', 'user': 'root', 'passwd': '',
             'host': 'localhost', 'use_unicode': False, 'charset': 'utf8'}
 
-CRAWLERA_ENABLED = False
+CRAWLERA_ENABLED = True
 CRAWLERA_APIKEY = '0ccaed0e66654294baf419f03c32344d'
 
 # Retry many times since proxies often fail
@@ -69,7 +69,7 @@ USER_AGENTS = [
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-# DOWNLOAD_DELAY = 5
+# DOWNLOAD_DELAY = 3
 # RANDOMIZE_DOWNLOAD_DELAY = True
 # The download delay setting will honor only one of:
 # CONCURRENT_REQUESTS_PER_DOMAIN = 16

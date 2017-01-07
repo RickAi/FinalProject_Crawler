@@ -10,11 +10,14 @@ import MySQLdb
 class MysqlPipeline(object):
 
     def process_item(self, item, spider):
+        if item['price'] == 0 or item['latitude'] is None or item['longitude'] is None:
+            return item
+
         DBKWARGS = spider.settings.get('DBKWARGS')
         con = MySQLdb.connect(**DBKWARGS)
         cur = con.cursor()
         sql = (
-            "insert into HouseRent(url,title,bedroom_count,livingroom_count,house_area,house_name,updated_date,address,district,city,latitude,longitude,price,source) "
+            "insert into HouseRent_58(url,title,bedroom_count,livingroom_count,house_area,house_name,updated_date,address,district,city,latitude,longitude,price,source) "
             "values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)")
         lis = (item['url'], item['title'], item['bedroom_count'], item['livingroom_count'], item['house_area'],
                item['house_name'], item['updated_date'], item['address'], item['district'], item['city'], item['latitude'], item['longitude'],
@@ -28,13 +31,14 @@ class MysqlPipeline(object):
             con.commit()
         cur.close()
         con.close()
+
         return item
 
 
 class CSVPipeline(object):
     def process_item(self, item, spider):
         # 打开写入的文件和CSV写入模块
-        self.file = open('lianjia_rent.csv', 'a')
+        self.file = open('data.csv', 'a')
         csvWriter = csv.writer(self.file)
 
         line = (item['url'], item['title'], item['bedroom_count'], item['livingroom_count'], item['house_area'],

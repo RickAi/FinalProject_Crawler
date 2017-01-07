@@ -174,7 +174,7 @@ class CustomDownloaderMiddleware(object):
         DBKWARGS = spider.settings.get('DBKWARGS')
         con = MySQLdb.connect(**DBKWARGS)
         cur = con.cursor()
-        sql = ("select * from HouseRent where url = '%s'" % request.url)
+        sql = ("select * from HouseRent_58 where url = '%s'" % request.url)
         try:
             query = cur.execute(sql)
             if query > 0:
