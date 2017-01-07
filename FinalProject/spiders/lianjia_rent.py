@@ -33,9 +33,13 @@ class LianjiaSpider(scrapy.Spider):
         item['url'] = response.request.url
         item['title'] = response.xpath('//html/head/title/text()').extract()[0]
 
-        room_detail = re.findall(r'\d+', re.search(r'\d室\d厅', item['title']).group(0))
-        item['bedroom_count'] = room_detail[0]
-        item['livingroom_count'] = room_detail[1]
+        try:
+            room_detail = re.findall(r'\d+', re.search(r'\d室\d厅', item['title']).group(0))
+            item['bedroom_count'] = room_detail[0]
+            item['livingroom_count'] = room_detail[1]
+        except:
+            item['bedroom_count'] = str(-1)
+            item['livingroom_count'] = str(-1)
 
         item['updated_date'] = response.request.meta['updated_date']
         item['city'] = response.xpath('//head/script/text()').re(r'city_name.*\'')[0].split('\'')[-2]
@@ -54,7 +58,7 @@ class LianjiaSpider(scrapy.Spider):
         item = response.request.meta['items']
         # 这个类型的网页只能通过正则表达式匹配信息
         item['house_area'] = \
-        re.findall(r'[-+]?([0-9]*\.[0-9]+|[0-9]+)', response.xpath('//html').re(r'area.*,')[0].split('\'')[1])[0]
+            re.findall(r'[-+]?([0-9]*\.[0-9]+|[0-9]+)', response.xpath('//html').re(r'area.*,')[0].split('\'')[1])[0]
         item['house_name'] = response.xpath('//html').re(r'resblockName.*,')[0].split('\'')[1]
         item['price'] = response.xpath('//html').re(r'totalPrice.*,')[0].split('\'')[1]
         if response.xpath('//html').re(r'resblockPosition.*,'):

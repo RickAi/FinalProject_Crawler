@@ -4,17 +4,21 @@
 #
 # See documentation in:
 # http://doc.scrapy.org/en/latest/topics/spider-middleware.html
-
+import MySQLdb
 from scrapy import signals
 import re
 import random
 import base64
 import logging
 
+from scrapy.exceptions import IgnoreRequest
+
 log = logging.getLogger('scrapy.proxies')
+
 
 class Mode:
     RANDOMIZE_PROXY_EVERY_REQUESTS, RANDOMIZE_PROXY_ONCE, SET_CUSTOM_PROXY = range(3)
+
 
 class RandomProxy(object):
     def __init__(self, settings):
@@ -84,8 +88,8 @@ class RandomProxy(object):
         else:
             request.meta['proxy'] = proxy_address
             # log.debug('Proxy user pass not found')
-        # log.debug('Using proxy <%s>, %d proxies left' % (
-        #         proxy_address, len(self.proxies)))
+            # log.debug('Using proxy <%s>, %d proxies left' % (
+            #         proxy_address, len(self.proxies)))
 
     def process_exception(self, request, exception, spider):
         # if 'proxy' not in request.meta:
@@ -102,6 +106,7 @@ class RandomProxy(object):
             log.info('Removing failed proxy <%s>, %d proxies left' % (
                 proxy, len(self.proxies)))
 
+
 class RandomUserAgent(object):
     """Randomly rotate user agents based on a list of predefined ones"""
 
@@ -113,7 +118,7 @@ class RandomUserAgent(object):
         return cls(crawler.settings.getlist('USER_AGENTS'))
 
     def process_request(self, request, spider):
-	#print "**************************" + random.choice(self.agents)
+        # print "**************************" + random.choice(self.agents)
         request.headers.setdefault('User-Agent', random.choice(self.agents))
 
 
@@ -163,3 +168,22 @@ class FinalprojectSpiderMiddleware(object):
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
+
+class CustomDownloaderMiddleware(object):
+    def process_request(self, request, spider):
+        DBKWARGS = spider.settings.get('DBKWARGS')
+        con = MySQLdb.connect(**DBKWARGS)
+        cur = con.cursor()
+        sql = ("select * from HouseRent where url = '%s'" % request.url)
+        try:
+            query = cur.execute(sql)
+            if query > 0:
+                log.info("duplicate url:" + request.url)
+                raise IgnoreRequest()
+        except:
+            raise IgnoreRequest()
+        finally:
+            cur.close()
+            con.close()
+
+        return None

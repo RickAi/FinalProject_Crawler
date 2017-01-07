@@ -7,8 +7,8 @@
 import csv
 import MySQLdb
 
-
 class MysqlPipeline(object):
+
     def process_item(self, item, spider):
         DBKWARGS = spider.settings.get('DBKWARGS')
         con = MySQLdb.connect(**DBKWARGS)
