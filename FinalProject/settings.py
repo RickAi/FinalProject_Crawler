@@ -17,6 +17,7 @@ NEWSPIDER_MODULE = 'FinalProject.spiders'
 # database connection parameters
 DBKWARGS = {'db': 'final_project', 'user': 'root', 'passwd': '',
             'host': 'localhost', 'use_unicode': False, 'charset': 'utf8'}
+DB_TABLE = 'HouseSale_lianjia'
 
 CRAWLERA_ENABLED = True
 CRAWLERA_APIKEY = '0ccaed0e66654294baf419f03c32344d'

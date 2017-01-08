@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re
 import scrapy
-from FinalProject.items import FinalprojectItem
+from FinalProject.items import RentItem
 
 class LianjiaSpider(scrapy.Spider):
     name = "lianjia_rent"
@@ -29,7 +29,7 @@ class LianjiaSpider(scrapy.Spider):
                                  meta={'updated_date': updated_date})
 
     def parse_house_page(self, response):
-        item = FinalprojectItem()
+        item = RentItem()
         item['url'] = response.request.url
         item['title'] = response.xpath('//html/head/title/text()').extract()[0]
 
@@ -67,8 +67,8 @@ class LianjiaSpider(scrapy.Spider):
             item['latitude'] = \
                 response.xpath('//html').re(r'resblockPosition.*,')[0].split('\'')[1].split(',')[0]
         else:
-            item['longitude'] = ''
-            item['latitude'] = ''
+            item['longitude'] = None
+            item['latitude'] = None
 
         item['source'] = 'lianjia'
 
@@ -95,7 +95,7 @@ class LianjiaSpider(scrapy.Spider):
             item['latitude'] = lnglat_query[0].split('[')[-1].split(',')[0]
             item['longitude'] = lnglat_query[0].split('[')[-1].split(',')[1][:-1]
         else:
-            item['latitude'] = ''
-            item['longitude'] = ''
+            item['latitude'] = None
+            item['longitude'] = None
 
         yield item

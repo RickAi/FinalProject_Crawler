@@ -5,7 +5,7 @@ import re
 import demjson
 import scrapy
 import time
-from FinalProject.items import FinalprojectItem
+from FinalProject.items import RentItem
 
 class A58RentSpider(scrapy.Spider):
     name = "58_rent"
@@ -14,7 +14,7 @@ class A58RentSpider(scrapy.Spider):
 
     def start_requests(self):
         requests = []
-        for index in range(1, 201):
+        for index in range(1, 2):
             request = scrapy.Request("http://bj.58.com/zufang/pn%s/" % index)
             requests.append(request)
         return requests
@@ -36,7 +36,7 @@ class A58RentSpider(scrapy.Spider):
                                  dont_filter=True)
 
     def parse_house_page(self, response):
-        item = FinalprojectItem()
+        item = RentItem()
 
         item['updated_date'] = time.strftime("%Y-%m-%d", time.localtime(int(response.request.meta['time'])/1000))
         item['url'] = response.request.url

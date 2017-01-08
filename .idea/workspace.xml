@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc2a7bfd-673a-4998-84c4-ffb937f51d06" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lianjia_rent.csv" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/items.py" afterPath="$PROJECT_DIR$/FinalProject/items.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/middlewares.py" afterPath="$PROJECT_DIR$/FinalProject/middlewares.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/pipelines.py" afterPath="$PROJECT_DIR$/FinalProject/pipelines.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/settings.py" afterPath="$PROJECT_DIR$/FinalProject/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/spiders/a58_rent.py" afterPath="$PROJECT_DIR$/FinalProject/spiders/a58_rent.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/spiders/lianjia_rent.py" afterPath="$PROJECT_DIR$/FinalProject/spiders/lianjia_rent.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data.csv" afterPath="$PROJECT_DIR$/data.csv" />
     </list>
     <ignored path="FinalProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,7 +29,20 @@
     <favorites_list name="FinalProject" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="lianjia_sale.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FinalProject/spiders/lianjia_sale.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.50993377">
+              <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+              <folding>
+                <element signature="e#24#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -41,17 +57,19 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/FinalProject/items.py" />
         <option value="$PROJECT_DIR$/proxy_formatter.py" />
         <option value="$PROJECT_DIR$/lianjia_rent.csv" />
         <option value="$PROJECT_DIR$/list.txt" />
         <option value="$PROJECT_DIR$/FinalProject/spiders/lianjia.py" />
+        <option value="$PROJECT_DIR$/FinalProject/spiders/a58_rent.py" />
+        <option value="$PROJECT_DIR$/FinalProject/spiders/lianjia_rent.py" />
         <option value="$PROJECT_DIR$/data.csv" />
         <option value="$PROJECT_DIR$/FinalProject/middlewares.py" />
+        <option value="$PROJECT_DIR$/FinalProject/items.py" />
+        <option value="$PROJECT_DIR$/db_trial.py" />
         <option value="$PROJECT_DIR$/FinalProject/pipelines.py" />
         <option value="$PROJECT_DIR$/FinalProject/settings.py" />
-        <option value="$PROJECT_DIR$/FinalProject/spiders/lianjia_rent.py" />
-        <option value="$PROJECT_DIR$/FinalProject/spiders/a58_rent.py" />
+        <option value="$PROJECT_DIR$/FinalProject/spiders/lianjia_sale.py" />
       </list>
     </option>
   </component>
@@ -86,7 +104,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -140,6 +157,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -156,7 +174,7 @@
       <recent name="$PROJECT_DIR$/FinalProject" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.proxy_formatter">
+  <component name="RunManager" selected="Python.db_trial">
     <configuration default="false" name="proxy_formatter" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -170,6 +188,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="FinalProject" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/proxy_formatter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="db_trial" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FinalProject" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/db_trial.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -296,12 +331,14 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Python.proxy_formatter" />
+      <item index="1" class="java.lang.String" itemvalue="Python.db_trial" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Python.proxy_formatter" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Python.db_trial" />
+        <item index="1" class="java.lang.String" itemvalue="Python.proxy_formatter" />
       </list>
     </recent_temporary>
   </component>
@@ -334,7 +371,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32822478" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -357,7 +394,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/FinalProject/spiders/lianjia_rent.py">
+    <entry file="file://$PROJECT_DIR$/FinalProject/spiders/lianjia_sale.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -370,10 +407,14 @@
     <entry file="file://$PROJECT_DIR$/FinalProject/spiders/lianjia_rent.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalProject/spiders/lianjia_rent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="37" column="39" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
-          <folding>
-            <element signature="e#24#33#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -388,7 +429,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -396,7 +436,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -404,9 +443,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#167#181#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -414,7 +450,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="32" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -446,70 +481,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FinalProject/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23240373">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/list.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7675963">
-          <caret line="94" column="18" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2781457">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FinalProject/pipelines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30463576">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FinalProject/middlewares.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.496689">
-          <caret line="176" column="42" selection-start-line="176" selection-start-column="42" selection-end-line="176" selection-end-column="42" />
-          <folding>
-            <element signature="e#167#181#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FinalProject/spiders/lianjia_rent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09271523">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#33#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.25827813">
+          <caret line="83" column="10" selection-start-line="83" selection-start-column="10" selection-end-line="83" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FinalProject/spiders/a58_rent.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23178808">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
+        <state vertical-scroll-proportion="0.35629138">
+          <caret line="66" column="22" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21192053">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalProject/spiders/lianjia_rent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30993378">
+          <caret line="36" column="90" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalProject/middlewares.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.119205296">
+          <caret line="174" column="50" selection-start-line="174" selection-start-column="8" selection-end-line="174" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalProject/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.119205296">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalProject/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.92715234">
+          <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FinalProject/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.29801324">
-          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-          <folding />
+        <state vertical-scroll-proportion="0.21721855">
+          <caret line="66" column="46" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalProject/spiders/lianjia_sale.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50993377">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
