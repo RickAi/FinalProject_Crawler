@@ -14,7 +14,7 @@ class A58SaleSpider(scrapy.Spider):
 
     def start_requests(self):
         requests = []
-        for index in range(1, 2):
+        for index in range(1, 201):
             request = scrapy.Request(self.start_urls[0] + "pn%s/" % index)
             requests.append(request)
         return requests
@@ -50,14 +50,24 @@ class A58SaleSpider(scrapy.Spider):
         item['longitude'] = info_1_josn['baidulon']
 
         # info_2匹配面积,价格
-        info_2 = response.xpath('//html').re(r'\{\"I\"\:1081.*?\}')[0]
-        info_2_josn = demjson.decode(info_2)
-        info_2_split = info_2_josn['V']
-        item['house_area'] = info_2_split
-        info_2 = response.xpath('//html').re(r'\{\"I\"\:1078.*?\}')[0]
-        info_2_josn = demjson.decode(info_2)
-        info_2_split = info_2_josn['V']
-        item['total_price'] = info_2_split
+        try:
+            info_2 = response.xpath('//html').re(r'\{\"I\"\:1081.*?\}')[0]
+            info_2_josn = demjson.decode(info_2)
+            info_2_split = info_2_josn['V']
+            item['house_area'] = info_2_split
+        except:
+            item['house_area'] = 0
+
+        try:
+            info_2 = response.xpath('//html').re(r'\{\"I\"\:1078.*?\}')[0]
+            info_2_josn = demjson.decode(info_2)
+            info_2_split = info_2_josn['V']
+            item['total_price'] = info_2_split
+        except:
+            try:
+                item['total_price'] = response.xpath('//*[@id="main"]/div[1]/div[2]/div[2]/ul/li[1]/div[2]/span/text()').extract()[0]
+            except:
+                item['total_price'] = 0
 
         # 单价
         try:
@@ -67,10 +77,11 @@ class A58SaleSpider(scrapy.Spider):
             item['per_price_detail'] = 0
 
         # 房间细节
-        room_detail = response.xpath('//*[@id="main"]/div[1]/div[2]/div[2]/ul/li[4]/div[2]/text()').extract()[0].strip()
         try:
+            room_detail = response.xpath('//*[@id="main"]/div[1]/div[2]/div[2]/ul/li[@class="su_li_bg"]/following-sibling::li/div[@class="su_con"]/text()').extract()[0].strip()
             item['bedroom_count'] = re.findall(r'\d+', re.search(r'\d室', room_detail).group(0))[0]
         except:
+            room_detail = ""
             item['bedroom_count'] = str(-1)
         try:
             item['livingroom_count'] = re.findall(r'\d+', re.search(r'\d厅', room_detail).group(0))[0]
