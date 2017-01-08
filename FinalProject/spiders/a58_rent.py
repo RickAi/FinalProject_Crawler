@@ -15,7 +15,7 @@ class A58RentSpider(scrapy.Spider):
     def start_requests(self):
         requests = []
         for index in range(1, 2):
-            request = scrapy.Request("http://bj.58.com/zufang/pn%s/" % index)
+            request = scrapy.Request(self.start_urls[0] + "pn%s/" % index)
             requests.append(request)
         return requests
 
@@ -25,7 +25,7 @@ class A58RentSpider(scrapy.Spider):
             house_href = info.xpath('attribute::href').extract()[0]
             house_url = house_href.split('?')[0]
 
-            if not house_url.startswith('http://bj.58.com/zufang/'):
+            if not house_url.startswith(self.start_urls[0]):
                 continue
 
             # 把发布时间sortid的信息提取进housePublishedTime
@@ -61,7 +61,7 @@ class A58RentSpider(scrapy.Spider):
             item['livingroom_count'] = str(-1)
 
         # info_1匹配name,lon,lat,baidulon,baidulat
-        info_1 = response.xpath('/html/head/script[1]/text()').re(r'"xiaoqu"\:\{.*?\}')[0]
+        info_1 = response.xpath('/html/head/script[2]/text()').re(r'"xiaoqu"\:\{.*?\}')[0]
         info_1_josn = demjson.decode('{' + info_1 + '}')['xiaoqu']
         item['house_name'] = info_1_josn['name']
         item['latitude'] = info_1_josn['baidulat']

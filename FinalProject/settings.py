@@ -17,9 +17,9 @@ NEWSPIDER_MODULE = 'FinalProject.spiders'
 # database connection parameters
 DBKWARGS = {'db': 'final_project', 'user': 'root', 'passwd': '',
             'host': 'localhost', 'use_unicode': False, 'charset': 'utf8'}
-DB_TABLE = 'HouseSale_lianjia'
+DB_TABLE = 'HouseSale_58'
 
-CRAWLERA_ENABLED = True
+CRAWLERA_ENABLED = False
 CRAWLERA_APIKEY = '0ccaed0e66654294baf419f03c32344d'
 
 # Retry many times since proxies often fail

@@ -12,7 +12,7 @@ class LianjiaSaleSpider(scrapy.Spider):
     def start_requests(self):
         requests = []
         for index in range(1, 101):
-            request = scrapy.Request("http://bj.lianjia.com/ershoufang/pg%s/" % index)
+            request = scrapy.Request(self.start_urls[0] + "pg%s/" % index)
             requests.append(request)
         return requests
 
