@@ -17,16 +17,16 @@ NEWSPIDER_MODULE = 'FinalProject.spiders'
 # database connection parameters
 DBKWARGS = {'db': 'final_project', 'user': 'root', 'passwd': '',
             'host': 'localhost', 'use_unicode': False, 'charset': 'utf8'}
-DB_TABLE = 'HouseRent_5i5j'
+DB_TABLE = 'HouseSale_5i5j'
 
 CRAWLERA_ENABLED = True
 CRAWLERA_APIKEY = '0ccaed0e66654294baf419f03c32344d'
-CRAWLERA_PRESERVE_DELAY = True
+# CRAWLERA_PRESERVE_DELAY = True
 
 # Retry many times since proxies often fail
 RETRY_TIMES = 10
 # Retry on most error codes since proxies fail for different reasons
-RETRY_HTTP_CODES = [500, 503, 504, 400, 403, 404, 408, 301, 302]
+RETRY_HTTP_CODES = [500, 503, 504, 400, 403, 404, 408, 301, 302, 429]
 
 # Proxy list containing entries like
 # http://host1:port
@@ -71,8 +71,8 @@ USER_AGENTS = [
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 3
-RANDOMIZE_DOWNLOAD_DELAY = True
+# DOWNLOAD_DELAY = 1
+# RANDOMIZE_DOWNLOAD_DELAY = True
 # The download delay setting will honor only one of:
 # CONCURRENT_REQUESTS_PER_DOMAIN = 16
 # CONCURRENT_REQUESTS_PER_IP = 16

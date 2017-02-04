@@ -13,7 +13,7 @@ class A5i5jRentSpider(scrapy.Spider):
     def start_requests(self):
         requests = []
         for index in range(1, 201):
-            request = scrapy.Request(self.start_urls[0] + "pn%s/" % index)
+            request = scrapy.Request(self.start_urls[0] + "pn%s/w1" % index)
             requests.append(request)
         return requests
 
@@ -29,9 +29,6 @@ class A5i5jRentSpider(scrapy.Spider):
         item = RentItem()
         item['title'] = response.xpath('//html/head/title/text()').extract()[0].split('_')[0].strip()
         item['url'] = response.request.url
-
-        if response.xpath('//*[@id="scroll"]/body/section[2]/div/div/ul/li[1]/span[2]/text()').extract()[0] != '整租':
-            return
 
         try:
             room_detail = response.xpath('//*[@id="scroll"]/body/section[2]/div/div/ul/li[2]/ul/li[1]/text()').extract()[0]
