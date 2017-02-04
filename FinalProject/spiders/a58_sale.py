@@ -43,7 +43,10 @@ class A58SaleSpider(scrapy.Spider):
             item['city'] = city_query_2_json['locallist'][0]['name']
 
         # info_1匹配name,lon,lat,baidulon,baidulat
-        info_1 = response.xpath('/html/head/script[2]/text()').re(r'"xiaoqu"\:\{.*?\}')[0]
+        try:
+            info_1 = response.xpath('/html/head/script[2]/text()').re(r'"xiaoqu"\:\{.*?\}')[0]
+        except:
+            info_1 = response.xpath('/html/head/script[1]/text()').re(r'"xiaoqu"\:\{.*?\}')[0]
         info_1_josn = demjson.decode('{' + info_1 + '}')['xiaoqu']
         item['house_name'] = info_1_josn['name']
         item['latitude'] = info_1_josn['baidulat']
@@ -74,7 +77,7 @@ class A58SaleSpider(scrapy.Spider):
             per_price_detail = response.xpath('//*[@id="main"]/div[1]/div[2]/div[2]/ul/li[1]/div[2]/text()').extract()[1].strip()
             item['per_price'] = re.findall(r'\d+', re.search(r'\d+元', per_price_detail).group(0))[0]
         except:
-            item['per_price_detail'] = 0
+            item['per_price'] = 0
 
         # 房间细节
         try:

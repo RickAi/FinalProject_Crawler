@@ -70,13 +70,13 @@ class LianjiaSaleSpider(scrapy.Spider):
         item['per_price'] = response.xpath('//html').re(r'price.*,')[0].split('\'')[1]
         item['house_area'] = response.xpath('//html').re(r'area.*,')[0].split('\'')[1]
         if response.xpath('//html').re(r'resblockPosition.*,'):
-            item['longitude'] = \
-            response.xpath('//html').re(r'resblockPosition.*,')[0].split('\'')[1].split(',')[1]
             item['latitude'] = \
+            response.xpath('//html').re(r'resblockPosition.*,')[0].split('\'')[1].split(',')[1]
+            item['longitude'] = \
             response.xpath('//html').re(r'resblockPosition.*,')[0].split('\'')[1].split(',')[0]
         else:
-            item['longitude'] = None
             item['latitude'] = None
+            item['longitude'] = None
 
         yield item
 

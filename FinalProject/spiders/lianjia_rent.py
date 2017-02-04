@@ -10,7 +10,7 @@ class LianjiaSpider(scrapy.Spider):
 
     def start_requests(self):
         requests = []
-        for index in range(1, 101):
+        for index in range(1, 201):
             request = scrapy.Request(self.start_urls[0] + "pg%s/" % index)
             requests.append(request)
         return requests
@@ -33,6 +33,9 @@ class LianjiaSpider(scrapy.Spider):
         item['url'] = response.request.url
         item['title'] = response.xpath('//html/head/title/text()').extract()[0]
 
+        if response.xpath('//*[@id="introduction"]/div/div[2]/div[1]/div[2]/ul/li[1]/text()').extract()[0] != '整租':
+            return
+
         try:
             room_detail = re.findall(r'\d+', re.search(r'\d室\d厅', item['title']).group(0))
             item['bedroom_count'] = room_detail[0]
@@ -46,12 +49,7 @@ class LianjiaSpider(scrapy.Spider):
         item['address'] = ''
         item['district'] = ''
 
-        info_parse_1 = response.xpath('//html').re(r'resblockName.*,')
-        if info_parse_1:
-            yield scrapy.Request(response.request.url, callback=self.parse_house_page_res, dont_filter=True,
-                                 meta={'items': item})
-        else:
-            yield scrapy.Request(response.request.url, callback=self.parse_house_page_com, dont_filter=True,
+        yield scrapy.Request(response.request.url, callback=self.parse_house_page_res, dont_filter=True,
                                  meta={'items': item})
 
     def parse_house_page_res(self, response):
@@ -62,40 +60,14 @@ class LianjiaSpider(scrapy.Spider):
         item['house_name'] = response.xpath('//html').re(r'resblockName.*,')[0].split('\'')[1]
         item['price'] = response.xpath('//html').re(r'totalPrice.*,')[0].split('\'')[1]
         if response.xpath('//html').re(r'resblockPosition.*,'):
-            item['longitude'] = \
-                response.xpath('//html').re(r'resblockPosition.*,')[0].split('\'')[1].split(',')[1]
             item['latitude'] = \
+                response.xpath('//html').re(r'resblockPosition.*,')[0].split('\'')[1].split(',')[1]
+            item['longitude'] = \
                 response.xpath('//html').re(r'resblockPosition.*,')[0].split('\'')[1].split(',')[0]
         else:
             item['longitude'] = None
             item['latitude'] = None
 
         item['source'] = 'lianjia'
-
-        yield item
-
-    def parse_house_page_com(self, response):
-        item = response.request.meta['items']
-        house_price_query = '//body/div/section/div/div[@class="desc-text clear"]/dl/dd/span/strong[@class="ft-num"]/text()'
-        item['price'] = str(response.xpath(house_price_query).extract()[0])
-
-        house_area_query = '//body/div/section/div/div[@class="desc-text clear"]/dl/dd/span/i/text()'
-        item['house_area'] = str(response.xpath(house_area_query).extract()[0].replace('/', '').strip()[:-1])
-
-        house_name_query = '//body/div/section/div/div[@class="desc-text clear"]/dl[@class="clear"]/dd/a[1]'
-        if response.xpath(house_name_query).xpath('attribute::target').extract():
-            house_name_query = '//body/div/section/div/div[@class="desc-text clear"]/dl[@class="clear"]/dd/text()'
-            item['house_name'] = response.xpath(house_name_query).extract()[0]
-        else:
-            item['house_name'] = response.xpath(house_name_query).xpath('text()').extract()[0]
-
-        # 这里匹配经纬度
-        lnglat_query = response.xpath('/html').re(r'coordinates.*?]')
-        if lnglat_query:
-            item['latitude'] = lnglat_query[0].split('[')[-1].split(',')[0]
-            item['longitude'] = lnglat_query[0].split('[')[-1].split(',')[1][:-1]
-        else:
-            item['latitude'] = None
-            item['longitude'] = None
 
         yield item

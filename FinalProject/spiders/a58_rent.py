@@ -14,7 +14,7 @@ class A58RentSpider(scrapy.Spider):
 
     def start_requests(self):
         requests = []
-        for index in range(1, 2):
+        for index in range(1, 201):
             request = scrapy.Request(self.start_urls[0] + "pn%s/" % index)
             requests.append(request)
         return requests
@@ -61,9 +61,13 @@ class A58RentSpider(scrapy.Spider):
             item['livingroom_count'] = str(-1)
 
         # info_1匹配name,lon,lat,baidulon,baidulat
-        info_1 = response.xpath('/html/head/script[2]/text()').re(r'"xiaoqu"\:\{.*?\}')[0]
+        try:
+            info_1 = response.xpath('/html/head/script[1]/text()').re(r'"xiaoqu"\:\{.*?\}')[0]
+        except:
+            info_1 = response.xpath('/html/head/script[2]/text()').re(r'"xiaoqu"\:\{.*?\}')[0]
         info_1_josn = demjson.decode('{' + info_1 + '}')['xiaoqu']
         item['house_name'] = info_1_josn['name']
+
         item['latitude'] = info_1_josn['baidulat']
         item['longitude'] = info_1_josn['baidulon']
 
