@@ -4,9 +4,7 @@
     <list default="true" id="bc2a7bfd-673a-4998-84c4-ffb937f51d06" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/settings.py" afterPath="$PROJECT_DIR$/FinalProject/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/spiders/a5i5j_rent.py" afterPath="$PROJECT_DIR$/FinalProject/spiders/a5i5j_rent.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/spiders/a5i5j_sale.py" afterPath="$PROJECT_DIR$/FinalProject/spiders/a5i5j_sale.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data.csv" afterPath="$PROJECT_DIR$/data.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/spiders/a58_rent.py" afterPath="$PROJECT_DIR$/FinalProject/spiders/a58_rent.py" />
     </list>
     <ignored path="FinalProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/FinalProject/spiders/anjuke_sale.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="93" selection-end-column="18" />
+              <caret line="64" column="8" selection-start-line="64" selection-start-column="8" selection-end-line="80" selection-end-column="38" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
               </folding>
@@ -39,24 +37,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="a5i5j_sale.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FinalProject/spiders/a5i5j_sale.py">
+      <file leaf-file-name="ganji_sale.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FinalProject/spiders/ganji_sale.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
+              <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
               <folding>
-                <element signature="e#24#33#0" expanded="true" />
+                <element signature="e#24#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="a5i5j_rent.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FinalProject/spiders/a5i5j_rent.py">
+      <file leaf-file-name="pipelines.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FinalProject/pipelines.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
-              <folding />
+              <caret line="91" column="19" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
+              <folding>
+                <element signature="e#192#202#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -64,8 +64,18 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FinalProject/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.09486166">
-              <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.32674572">
+              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -75,10 +85,20 @@
         <entry file="file://$PROJECT_DIR$/FinalProject/spiders/anjuke_rent.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+              <caret line="52" column="41" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="41" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="a58_rent.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FinalProject/spiders/a58_rent.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -107,14 +127,17 @@
         <option value="$PROJECT_DIR$/FinalProject/pipelines.py" />
         <option value="$PROJECT_DIR$/FinalProject/spiders/lianjia_sale.py" />
         <option value="$PROJECT_DIR$/FinalProject/middlewares.py" />
-        <option value="$PROJECT_DIR$/FinalProject/spiders/a58_rent.py" />
         <option value="$PROJECT_DIR$/FinalProject/spiders/a58_sale.py" />
         <option value="$PROJECT_DIR$/FinalProject/spiders/lianjia_rent.py" />
         <option value="$PROJECT_DIR$/FinalProject/spiders/a5i5j_sale.py" />
         <option value="$PROJECT_DIR$/FinalProject/spiders/anjuke_sale.py" />
-        <option value="$PROJECT_DIR$/data.csv" />
         <option value="$PROJECT_DIR$/FinalProject/spiders/anjuke_rent.py" />
         <option value="$PROJECT_DIR$/FinalProject/spiders/a5i5j_rent.py" />
+        <option value="$PROJECT_DIR$/FinalProject/spiders/genji_rent.py" />
+        <option value="$PROJECT_DIR$/FinalProject/spiders/a58_rent.py" />
+        <option value="$PROJECT_DIR$/FinalProject/spiders/ganji_rent.py" />
+        <option value="$PROJECT_DIR$/data.csv" />
+        <option value="$PROJECT_DIR$/FinalProject/spiders/ganji_sale.py" />
         <option value="$PROJECT_DIR$/FinalProject/settings.py" />
       </list>
     </option>
@@ -151,6 +174,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -203,7 +227,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -440,20 +463,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/FinalProject/spiders/lianjia_rent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FinalProject/pipelines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FinalProject/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -713,6 +722,93 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/FinalProject/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41501975">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalProject/middlewares.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35704875">
+          <caret line="175" column="19" selection-start-line="175" selection-start-column="14" selection-end-line="175" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalProject/spiders/lianjia_rent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6772069">
+          <caret line="72" column="7" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalProject/spiders/a58_sale.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6916996">
+          <caret line="24" column="48" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalProject/spiders/a5i5j_sale.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalProject/spiders/a5i5j_rent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalProject/spiders/anjuke_rent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="52" column="41" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="41" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalProject/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="91" column="19" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
+          <folding>
+            <element signature="e#192#202#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalProject/spiders/anjuke_sale.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="64" column="8" selection-start-line="64" selection-start-column="8" selection-end-line="80" selection-end-column="38" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalProject/spiders/a58_rent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinalProject/spiders/ganji_rent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35704875">
+          <caret line="55" column="11" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -721,100 +817,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FinalProject/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41501975">
-          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FinalProject/pipelines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53886694">
-          <caret line="91" column="19" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="19" />
-          <folding>
-            <element signature="e#192#202#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FinalProject/middlewares.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35704875">
-          <caret line="175" column="19" selection-start-line="175" selection-start-column="14" selection-end-line="175" selection-end-column="19" />
-          <folding>
-            <element signature="e#167#181#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FinalProject/spiders/a58_rent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21870883">
-          <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="60" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FinalProject/spiders/lianjia_rent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6772069">
-          <caret line="72" column="7" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FinalProject/spiders/a58_sale.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6916996">
-          <caret line="24" column="48" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FinalProject/spiders/anjuke_rent.py">
+    <entry file="file://$PROJECT_DIR$/FinalProject/spiders/ganji_sale.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
           <folding>
-            <element signature="e#24#33#0" expanded="true" />
+            <element signature="e#24#39#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FinalProject/spiders/anjuke_sale.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="93" selection-end-column="18" />
-          <folding>
-            <element signature="e#24#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FinalProject/spiders/a5i5j_sale.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
-          <folding>
-            <element signature="e#24#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FinalProject/spiders/a5i5j_rent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FinalProject/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09486166">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.32674572">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding />
         </state>
       </provider>

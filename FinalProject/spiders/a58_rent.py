@@ -38,6 +38,9 @@ class A58RentSpider(scrapy.Spider):
     def parse_house_page(self, response):
         item = RentItem()
 
+        if response.xpath('/html/body/div[4]/div[2]/div[2]/div[1]/div[1]/ul/li[1]/span[2]/text()').extract()[0] != '整租':
+            return
+
         item['updated_date'] = time.strftime("%Y-%m-%d", time.localtime(int(response.request.meta['time'])/1000))
         item['url'] = response.request.url
         item['title'] = response.xpath('//head/title/text()').extract()[0].strip()
